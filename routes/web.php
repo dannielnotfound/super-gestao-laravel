@@ -23,7 +23,7 @@ Route::get('/sobrenos', [SobreNosController::class, 'sobreNos'])->name('site.sob
 Route::get('/contato', [ContatoController::class, 'contato'])->name('site.contato');
 Route::get('/login', function(){ return 'Login';})->name('site.login');
 
-Route::get('/teste', [TesteController::class, 'teste'] )->name('site.teste');
+Route::get('/teste/{p1}/{p2}', [TesteController::class, 'teste'] )->name('site.teste');
 
 
 Route::fallback(function(){
