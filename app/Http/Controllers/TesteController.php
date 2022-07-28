@@ -11,7 +11,8 @@ class TesteController extends Controller
 
         #return view('site.teste', ['p1' => $p1, 'p2' => $p2]); //Array associativo
 
-        #return view('site.teste', compact('p1', 'p2')); //Compact Method
-        return view('site.teste')->with('p1', $p1); //with
+        return view('site.teste', compact('p1', 'p2')); //Compact Method
+
+        #return view('site.teste')->with('p1', $p1)->with('p2', $p2); //with
     }
 }

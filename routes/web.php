@@ -5,6 +5,7 @@ use App\Http\Controllers\PrincipalController;
 use App\Http\Controllers\ContatoController;
 use App\Http\Controllers\SobreNosController;
 use App\Http\Controllers\TesteController;
+use App\Http\Controllers\FornecedorController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,7 +36,7 @@ Route::fallback(function(){
 //Utiliza-se o método prefix e posteriormente o metodo group que espera uma funçao de callback contendo as rotas que farao parte deste grupo
 Route::prefix('/app')->group(function(){
     Route::get('/clientes', function(){ return 'Clientes';})->name('app.clientes');
-    Route::get('/fornecedores', function(){ return 'Fornecedores';})->name('app.fornecedores');
+    Route::get('/fornecedores',[FornecedorController::class, 'index'])->name('app.fornecedores');
     Route::get('/produtos', function(){ return 'Produtos';})->name('app.produtos');
 });
 
