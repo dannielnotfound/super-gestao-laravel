@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class PrincipalController extends Controller
 {
     public function principal(){
-        return view('site.principalIndex');
+        $titulo = "Home";
+        return view('site.principalIndex', compact('titulo'));
     }
 }
